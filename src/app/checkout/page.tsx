@@ -89,6 +89,11 @@ export default function CheckoutPage() {
         theme: {
           color: "#B7395A",
         },
+        modal: {
+          ondismiss: function() {
+            setIsProcessing(false);
+          }
+        }
       };
 
       // @ts-ignore

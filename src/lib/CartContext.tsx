@@ -20,6 +20,7 @@ type CartContextType = {
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
+  isLoaded: boolean;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -45,6 +46,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('wooly_cart', JSON.stringify(items));
     }
   }, [items, isLoaded]);
+
+  React.useEffect(() => {
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'wooly_cart' && e.newValue) {
+        try {
+          setItems(JSON.parse(e.newValue));
+        } catch (err) {
+          console.error("Failed to parse cart from storage event");
+        }
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
 
   const addToCart = (newItem: CartItem) => {
     setItems((prev) => {
@@ -77,7 +92,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice }}>
+    <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice, isLoaded }}>
       {children}
     </CartContext.Provider>
   );

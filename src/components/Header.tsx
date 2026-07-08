@@ -7,8 +7,8 @@ import { useState } from "react";
 import SearchOverlay from "./SearchOverlay";
 
 export default function Header() {
-  const { totalItems } = useCart();
-  const { totalItems: wishlistTotal } = useWishlist();
+  const { totalItems, isLoaded: cartLoaded } = useCart();
+  const { totalItems: wishlistTotal, isLoaded: wishlistLoaded } = useWishlist();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -57,15 +57,15 @@ export default function Header() {
         </button>
         <Link href="/wishlist" className="relative border-none bg-oat rounded-full px-3 py-2 text-sm cursor-pointer text-ink font-karla font-bold whitespace-nowrap hover:bg-rose/40 transition-colors hidden sm:flex">
           ♡
-          {wishlistTotal > 0 && (
+          {wishlistLoaded && wishlistTotal > 0 && (
             <span className="absolute -top-1 -right-1 bg-raspberry text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
               {wishlistTotal}
             </span>
           )}
         </Link>
-        <Link href="/cart" className="relative border-none bg-oat rounded-full px-3 py-2 text-sm cursor-pointer text-ink font-karla font-bold whitespace-nowrap hover:bg-rose/40 transition-colors">
+        <Link href="/cart" className="relative flex items-center justify-center border-none bg-oat rounded-full px-3 py-2 text-sm cursor-pointer text-ink font-karla font-bold whitespace-nowrap hover:bg-rose/40 transition-colors">
           🧺
-          {totalItems > 0 && (
+          {cartLoaded && totalItems > 0 && (
             <span className="absolute -top-1 -right-1 bg-raspberry text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-bounce-short">
               {totalItems}
             </span>
@@ -85,7 +85,7 @@ export default function Header() {
           <Link href="/shop?cat=scarves" onClick={() => setIsMobileMenuOpen(false)}>Scarves</Link>
           <Link href="/shop?cat=amigurumi" onClick={() => setIsMobileMenuOpen(false)}>Amigurumi</Link>
           <Link href="/wishlist" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-            Wishlist {wishlistTotal > 0 && <span className="bg-raspberry text-white text-xs px-2 py-0.5 rounded-full">{wishlistTotal}</span>}
+            Wishlist {wishlistLoaded && wishlistTotal > 0 && <span className="bg-raspberry text-white text-xs px-2 py-0.5 rounded-full">{wishlistTotal}</span>}
           </Link>
           <Link href="/account" onClick={() => setIsMobileMenuOpen(false)}>My Account</Link>
           <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>

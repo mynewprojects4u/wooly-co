@@ -14,6 +14,7 @@ type WishlistContextType = {
   toggleWishlist: (productId: string) => void;
   isInWishlist: (productId: string) => boolean;
   totalItems: number;
+  isLoaded: boolean;
 };
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
@@ -39,6 +40,20 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('wooly_wishlist_new', JSON.stringify(items));
     }
   }, [items, isLoaded]);
+
+  useEffect(() => {
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'wooly_wishlist_new' && e.newValue) {
+        try {
+          setItems(JSON.parse(e.newValue));
+        } catch (err) {
+          console.error("Failed to parse wishlist from storage event");
+        }
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
 
   const addToWishlist = (productId: string) => {
     setItems((prev) => {
@@ -67,7 +82,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
   const totalItems = items.length;
 
   return (
-    <WishlistContext.Provider value={{ items, addToWishlist, removeFromWishlist, toggleWishlist, isInWishlist, totalItems }}>
+    <WishlistContext.Provider value={{ items, addToWishlist, removeFromWishlist, toggleWishlist, isInWishlist, totalItems, isLoaded }}>
       {children}
     </WishlistContext.Provider>
   );

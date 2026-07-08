@@ -1,20 +1,20 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { redirect } from "next/navigation";
-import { cookies } from "next/headers";
 import Link from "next/link";
+import { createClient } from "@/lib/supabase/server";
 
 export default async function AccountPage() {
-  const cookieStore = cookies();
-  const isAdmin = cookieStore.get('admin_auth')?.value === 'authenticated';
+  const supabase = createClient();
+  const { data: { user }, error } = await supabase.auth.getUser();
   
   // Basic Auth Check
-  if (!isAdmin && process.env.NODE_ENV === 'production') {
+  if (!user) {
     redirect("/login");
   }
 
-  const isOwner = isAdmin;
-  const userEmail = isOwner ? 'suhanisharma180801@gmail.com' : 'user@example.com';
+  const isOwner = user.email === 'suhanisharma180801@gmail.com';
+  const userEmail = user.email || 'user@example.com';
 
   return (
     <div className="min-h-screen flex flex-col bg-oat">

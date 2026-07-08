@@ -13,7 +13,7 @@ export default function ChatModal({
   productName: string 
 }) {
   const [messages, setMessages] = useState([
-    { role: "ai", text: `Hi! I'm the Wooly AI. What would you like to know about the ${productName}?` }
+    { role: "ai", text: `Hi! I'm the Wooly Assistant. What would you like to know about the ${productName}?` }
   ]);
   const [input, setInput] = useState("");
 
@@ -57,7 +57,7 @@ export default function ChatModal({
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🤖</span>
                 <div>
-                  <h3 className="font-bold font-fraunces text-lg leading-tight">Wooly AI</h3>
+                  <h3 className="font-bold font-fraunces text-lg leading-tight">Demo Assistant</h3>
                   <p className="text-[10px] uppercase tracking-widest font-mono opacity-80">Product Assistant</p>
                 </div>
               </div>

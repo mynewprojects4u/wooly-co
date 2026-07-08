@@ -64,21 +64,17 @@ export default async function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
-                <Link href={`/product/${product.id}`} className="block relative h-36 md:h-48 flex items-center justify-center text-5xl cursor-pointer" style={{ backgroundColor: product.bg === 'bg-rose' ? '#EFC4CE' : '#F5EEE3' }}>
-                  {product.icon}
-                  <button className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center text-sm shadow-sm hover:scale-110 transition-transform">
-                    ♡
-                  </button>
+                <Link href={`/product/${product.id}`} className="block relative h-36 md:h-48 flex flex-col items-center justify-center text-5xl cursor-pointer transition-colors" style={{ backgroundColor: product.bg === 'bg-rose' ? '#EFC4CE' : '#F5EEE3' }}>
+                  <span className="group-hover:scale-110 transition-transform duration-300">{product.icon}</span>
                 </Link>
                 <div className="p-3 md:p-4">
-                  <h3 className="font-bold text-sm text-ink line-clamp-1 mb-1">{product.name}</h3>
+                  <h3 className="font-bold text-sm text-ink line-clamp-1 mb-1 group-hover:text-raspberry transition-colors">
+                    <Link href={`/product/${product.id}`}>{product.name}</Link>
+                  </h3>
                   <div className="text-xs text-yellow-500 mb-2">★★★★★ {product.rating}</div>
                   <div className="flex items-center justify-between">
                     <div className="inline-flex items-center font-bold text-raspberry-deep">₹{product.price}</div>
                   </div>
-                  <button className="w-full mt-3 bg-rose text-raspberry-deep font-bold text-xs py-2 rounded-lg hover:bg-rose/80 transition-colors">
-                    Add to cart
-                  </button>
                 </div>
               </div>
             ))}

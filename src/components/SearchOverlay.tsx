@@ -117,7 +117,20 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
                 <div className="text-center py-12 text-ink/60">
                   <p className="mb-2 text-3xl">🧶</p>
                   <p>No products found for "{query}".</p>
-                  <p className="text-sm mt-2">Try checking your spelling or use more general terms!</p>
+                  <p className="text-sm mt-2 mb-6">Try checking your spelling or use more general terms!</p>
+                  
+                  <h3 className="font-bold text-xs text-ink/60 uppercase tracking-widest mb-4">Recommended</h3>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {["sage green", "bags", "amigurumi", "scarf", "rose"].map(sugg => (
+                      <button 
+                        key={sugg}
+                        onClick={() => setQuery(sugg)}
+                        className="font-mono text-xs text-ink/70 bg-oat px-3 py-2 rounded-full hover:bg-rose/40 hover:text-raspberry transition-colors border border-rose/30"
+                      >
+                        {sugg}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

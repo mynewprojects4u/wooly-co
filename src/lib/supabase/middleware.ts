@@ -59,8 +59,18 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   if (request.nextUrl.pathname.startsWith('/dashboard')) {
-    if (!user || user.email !== 'suhanisharma180801@gmail.com') {
+    const adminEmail = process.env.ADMIN_EMAIL || 'suhanisharma180801@gmail.com';
+    if (!user || user.email !== adminEmail) {
       const url = request.nextUrl.clone()
+      url.pathname = '/login'
+      return NextResponse.redirect(url)
+    }
+  }
+
+  if (request.nextUrl.pathname.startsWith('/checkout')) {
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.searchParams.set('redirect', '/checkout')
       url.pathname = '/login'
       return NextResponse.redirect(url)
     }

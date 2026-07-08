@@ -56,7 +56,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   };
 
   const handleAddToCart = (e?: React.MouseEvent) => {
-    if (!product || !activeColor) return;
+    if (!product || !activeColor || isAddingToCart) return;
     setIsAddingToCart(true);
     addToCart({
       id: product.id,
@@ -158,8 +158,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   priority
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-8xl md:text-9xl bg-rose/10">
-                  {product.icon}
+                <div className="w-full h-full min-h-[400px] flex flex-col items-center justify-center text-rose/50 bg-oat/30 font-karla">
+                  <span className="text-6xl mb-4 opacity-50">{product.icon}</span>
+                  <span className="text-sm font-bold tracking-widest uppercase opacity-50">Preview Coming Soon</span>
                 </div>
               )}
               
@@ -195,7 +196,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               </div>
               <span className="text-ink/30">|</span>
               <span className="text-sm font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded animate-pulse">
-                Only {Math.max(1, (product.name.length % 5) + 2)} left in stock
+                Limited Stock Available
               </span>
             </div>
             
@@ -206,7 +207,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </p>
 
             {/* Color Swatches */}
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-bold text-sm text-ink uppercase tracking-wide">Color:</span>
                 <span className="text-sm text-ink/70">{activeColor.name}</span>
@@ -267,27 +268,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               <p>⏳ <strong>Processing Time:</strong> Ready-to-ship in 2-3 days. Made-to-order in 1-3 weeks.</p>
             </div>
             
-            {/* Pincode Estimator */}
+            {/* Static Delivery Estimate */}
             <div className="bg-white p-5 rounded-2xl border border-rose/30 shadow-sm mb-6">
-              <h3 className="font-bold text-ink mb-3 flex items-center gap-2">
-                🚚 Delivery Estimate
+              <h3 className="font-bold text-ink mb-1 flex items-center gap-2">
+                🚚 Standard Delivery
               </h3>
-              <form onSubmit={checkPincode} className="flex gap-2 mb-2">
-                <input 
-                  type="text" 
-                  value={pincode}
-                  onChange={(e) => setPincode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                  placeholder="Enter 6-digit Pincode"
-                  className="flex-1 border border-rose/30 rounded-lg px-4 py-2 outline-none focus:border-raspberry font-karla text-sm"
-                />
-                <button type="submit" className="bg-ink text-white font-bold px-4 py-2 rounded-lg text-sm hover:bg-ink/80 transition-colors">
-                  Check
-                </button>
-              </form>
-              
-              {pincodeStatus === "checking" && <p className="text-xs text-ink/60 animate-pulse">Checking availability...</p>}
-              {pincodeStatus === "valid" && <p className="text-sm font-bold text-sage">✓ {deliveryEstimate} to {pincode}</p>}
-              {pincodeStatus === "invalid" && <p className="text-sm font-bold text-red-500">✕ Invalid pincode or out of delivery area</p>}
+              <p className="text-sm text-ink/80">3-5 Business Days across India.</p>
             </div>
 
             {/* Specifications Details Accordion (Mocked) */}
