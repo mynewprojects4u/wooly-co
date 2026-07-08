@@ -53,7 +53,7 @@ export default function Footer() {
             <li><Link href="/terms" className="hover:text-raspberry transition-colors">Terms & Conditions</Link></li>
             <li><Link href="/privacy" className="hover:text-raspberry transition-colors">Privacy Policy</Link></li>
             <li><Link href="/shipping" className="hover:text-raspberry transition-colors">Shipping Policy</Link></li>
-            <li><Link href="/returns" className="hover:text-raspberry transition-colors">Returns Policy</Link></li>
+            <li><Link href="/returns" className="hover:text-raspberry transition-colors">No Return Policy</Link></li>
           </ul>
         </div>
         <div>

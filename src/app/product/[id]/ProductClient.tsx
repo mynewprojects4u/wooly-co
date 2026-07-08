@@ -212,7 +212,7 @@ export default function ProductClient({ product }: { product: Product }) {
             
             {/* Urgent Policies */}
             <div className="bg-rose/20 rounded-xl p-4 mb-8 text-xs text-ink/80 border border-rose/40">
-              <p className="mb-1">⚠️ <strong>All Sales Are Final:</strong> No returns or refunds accepted. See our <Link href="/returns" className="underline">Returns Policy</Link>.</p>
+              <p className="mb-1">⚠️ <strong>All Sales Are Final:</strong> No returns or refunds accepted. See our <Link href="/returns" className="underline">No Return Policy</Link>.</p>
               <p>⏳ <strong>Processing Time:</strong> Ready-to-ship in 2-3 days. Made-to-order in 1-3 weeks.</p>
             </div>
             
@@ -244,7 +244,7 @@ export default function ProductClient({ product }: { product: Product }) {
               </details>
               <details className="group cursor-pointer">
                 <summary className="font-bold text-ink flex justify-between items-center outline-none">
-                  Shipping & Returns
+                  Shipping & No Return Policy
                   <span className="transition group-open:rotate-180">▼</span>
                 </summary>
                 <div className="text-sm text-ink/70 mt-3 pl-2 leading-relaxed">

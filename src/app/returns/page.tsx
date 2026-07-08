@@ -7,7 +7,7 @@ export default function ReturnsPage() {
     <div className="min-h-screen flex flex-col bg-oat">
       <Header />
       <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-12 md:py-20">
-        <h1 className="font-fraunces text-4xl font-bold text-ink mb-8 text-center">Returns & Refunds</h1>
+        <h1 className="font-fraunces text-4xl font-bold text-ink mb-8 text-center">No Return Policy</h1>
         <div className="bg-white p-8 rounded-3xl shadow-sm space-y-6 text-ink/80">
           <p className="text-xl font-bold text-raspberry-deep">All Sales Are Final</p>
           <p>Because every item at Wooly & Co. is meticulously handmade and often made-to-order, <strong>we do not accept returns, exchanges, or issue refunds</strong> once an order is placed.</p>
