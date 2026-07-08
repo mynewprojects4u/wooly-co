@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1",
+    "name": "Cloud Scarf",
+    "price": 899,
+    "rating": 4.8,
+    "icon": "🧣",
+    "imageUrl": "/images/products/1.png",
+    "bg": "bg-rose",
+    "cat": "scarves",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Sage",
+        "hex": "#B9CBA6"
+      },
+      {
+        "name": "Oat",
+        "hex": "#F5EEE3"
+      }
+    ],
+    "desc": "A super soft, cloud-like scarf perfect for chilly evenings. Hand-crocheted with 100% organic cotton."
+  },
+  {
+    "id": "2",
+    "name": "Bunny Amigurumi",
+    "price": 649,
+    "rating": 4.9,
+    "icon": "🐰",
+    "imageUrl": "/images/products/2.png",
+    "bg": "bg-rose",
+    "cat": "amigurumi",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Lavender",
+        "hex": "#D9C9E8"
+      }
+    ],
+    "desc": "An adorable, huggable bunny amigurumi. Safe for babies and makes a perfect gift."
+  },
+  {
+    "id": "3",
+    "name": "Granny-Square Tote",
+    "price": 1199,
+    "rating": 4.7,
+    "icon": "👜",
+    "imageUrl": "/images/products/3.png",
+    "bg": "bg-rose",
+    "cat": "bags",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Sage",
+        "hex": "#B9CBA6"
+      },
+      {
+        "name": "Oat",
+        "hex": "#F5EEE3"
+      }
+    ],
+    "desc": "Vintage-inspired granny square tote bag. Spacious enough for your daily essentials."
+  },
+  {
+    "id": "4",
+    "name": "Daisy Hairclips",
+    "price": 299,
+    "rating": 4.6,
+    "icon": "🌸",
+    "imageUrl": "/images/products/4.png",
+    "bg": "bg-rose",
+    "cat": "accessories",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Oat",
+        "hex": "#F5EEE3"
+      }
+    ],
+    "desc": "Set of 2 cute daisy hairclips to add a touch of spring to your outfit."
+  },
+  {
+    "id": "5",
+    "name": "Sunset Ripple Blanket",
+    "price": 2499,
+    "rating": 5,
+    "icon": "🛋️",
+    "imageUrl": "/images/products/5.png",
+    "bg": "bg-rose",
+    "cat": "decor",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Sage",
+        "hex": "#B9CBA6"
+      }
+    ],
+    "desc": "A warm and cozy ripple blanket with sunset hues. Perfect for the living room."
+  },
+  {
+    "id": "6",
+    "name": "Owl Amigurumi",
+    "price": 549,
+    "rating": 4.8,
+    "icon": "🦉",
+    "imageUrl": "/images/products/6.png",
+    "bg": "bg-oat",
+    "cat": "amigurumi",
+    "colors": [
+      {
+        "name": "Oat",
+        "hex": "#F5EEE3"
+      },
+      {
+        "name": "Sage",
+        "hex": "#B9CBA6"
+      }
+    ],
+    "desc": "A wise little owl amigurumi. Great desk companion."
+  },
+  {
+    "id": "7",
+    "name": "Boho Coasters (Set of 4)",
+    "price": 399,
+    "rating": 4.5,
+    "icon": "🌼",
+    "imageUrl": "/images/products/7.png",
+    "bg": "bg-rose",
+    "cat": "decor",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Oat",
+        "hex": "#F5EEE3"
+      },
+      {
+        "name": "Sage",
+        "hex": "#B9CBA6"
+      }
+    ],
+    "desc": "Protect your tables in style with these boho-chic crochet coasters."
+  },
+  {
+    "id": "8",
+    "name": "Mini Crossbody Bag",
+    "price": 999,
+    "rating": 4.7,
+    "icon": "👝",
+    "imageUrl": "/images/products/8.png",
+    "bg": "bg-rose",
+    "cat": "bags",
+    "colors": [
+      {
+        "name": "Rose",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "Lavender",
+        "hex": "#D9C9E8"
+      }
+    ],
+    "desc": "A compact crossbody bag for when you just need your phone and keys."
+  }
+]
