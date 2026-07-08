@@ -15,7 +15,7 @@ export default function CustomOrdersPage() {
           <ol className="list-decimal pl-5 space-y-3">
             <li><strong>Reach out:</strong> Send us your idea via our contact page.</li>
             <li><strong>Consultation:</strong> We'll discuss patterns, yarn types, colors, and pricing.</li>
-            <li><strong>Creation:</strong> Once approved and paid for, we'll start crocheting!</li>
+            <li><strong>Creation:</strong> Once approved, a 50% non-refundable deposit is required before we start crocheting! The remaining balance is due prior to shipping.</li>
             <li><strong>Delivery:</strong> We'll carefully pack and ship your custom piece.</li>
           </ol>
           

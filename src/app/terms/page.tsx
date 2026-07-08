@@ -16,7 +16,7 @@ export default function TermsPage() {
           <p className="mb-4 text-ink/80">All our products are handmade with care. Due to the nature of handmade items, slight variations in size, color, and design may occur, making each piece unique.</p>
           
           <h2 className="text-2xl font-bold mt-8 mb-4">2. Processing & Shipping</h2>
-          <p className="mb-4 text-ink/80">As each item is crafted by hand, processing times may vary. Ready-to-ship items typically dispatch within 2-3 business days. Made-to-order items may take 1-3 weeks. We offer free shipping pan-India on orders over ₹999.</p>
+          <p className="mb-4 text-ink/80">As each item is crafted by hand, processing times may vary. <strong>Ready-to-ship items dispatch in 2-3 days, and made-to-order items in 1-3 weeks.</strong> We offer free shipping pan-India on orders over ₹999.</p>
           
           <h2 className="text-2xl font-bold mt-8 mb-4">3. Refunds & Exchanges</h2>
           <p className="mb-4 text-ink/80"><strong>All sales are final.</strong> Due to the time-intensive nature of handmade crochet products, we do not accept returns, exchanges, or refunds once an order has been placed. Please review your order carefully before checking out.</p>

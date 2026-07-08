@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PromoBar from "@/components/PromoBar";
 import Link from "next/link";
 import { getAllProducts } from "@/lib/products";
+import Image from "next/image";
 
 const categories = [
   { name: "All", slug: "all", active: true },
@@ -64,14 +65,26 @@ export default async function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
-                <Link href={`/product/${product.id}`} className="block relative h-36 md:h-48 flex flex-col items-center justify-center text-5xl cursor-pointer transition-colors" style={{ backgroundColor: product.bg === 'bg-rose' ? '#EFC4CE' : '#F5EEE3' }}>
-                  <span className="group-hover:scale-110 transition-transform duration-300">{product.icon}</span>
+                <Link href={`/product/${product.id}`} className="block relative aspect-[4/5] bg-rose/10 overflow-hidden">
+                  {product.imageUrl ? (
+                    <Image 
+                      src={product.imageUrl} 
+                      alt={product.name} 
+                      fill 
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-5xl">
+                      {product.icon}
+                    </div>
+                  )}
                 </Link>
                 <div className="p-3 md:p-4">
                   <h3 className="font-bold text-sm text-ink line-clamp-1 mb-1 group-hover:text-raspberry transition-colors">
                     <Link href={`/product/${product.id}`}>{product.name}</Link>
                   </h3>
-                  <div className="text-xs text-yellow-500 mb-2">★★★★★ {product.rating}</div>
+                  <div className="text-xs text-yellow-500 mb-2">★★★★★ {Number(product.rating).toFixed(1)}</div>
                   <div className="flex items-center justify-between">
                     <div className="inline-flex items-center font-bold text-raspberry-deep">₹{product.price}</div>
                   </div>

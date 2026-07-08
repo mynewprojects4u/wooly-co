@@ -170,7 +170,7 @@ export default function DashboardClient() {
                     ) : (
                       <div className="flex items-center justify-between">
                         <div className="inline-flex items-center font-bold text-raspberry-deep">₹{product.price}</div>
-                        <span className="text-xs text-ink/50">{product.rating} ★</span>
+                        <span className="text-xs text-ink/50">{Number(product.rating).toFixed(1)} ⭐</span>
                       </div>
                     )}
                   </td>

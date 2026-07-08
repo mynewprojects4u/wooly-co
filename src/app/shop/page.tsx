@@ -168,7 +168,7 @@ export default function ShopPage() {
                   </Link>
                   <div className="p-4 flex flex-col flex-1">
                     <h3 className="font-bold text-sm text-ink line-clamp-1 mb-1 group-hover:text-raspberry transition-colors">{product.name}</h3>
-                    <div className="text-xs text-yellow-500 mb-2">★★★★★ {product.rating}</div>
+                    <div className="text-xs text-yellow-500 mb-2">★★★★★ {Number(product.rating).toFixed(1)}</div>
                     <div className="flex items-center gap-1 mb-3 mt-auto">
                       {product.colors.slice(0, 3).map((c, i) => (
                         <span key={i} className="w-3 h-3 rounded-full border border-black/10" style={{ backgroundColor: c.hex }}></span>
@@ -197,14 +197,6 @@ export default function ShopPage() {
               </div>
             )}
             
-            {/* Pagination Mock */}
-            {filteredProducts.length > 0 && (
-              <div className="mt-12 flex justify-center gap-2">
-                <button className="w-10 h-10 rounded-xl bg-raspberry text-white font-bold flex items-center justify-center">1</button>
-                <button className="w-10 h-10 rounded-xl bg-white border border-rose/30 text-ink hover:bg-rose/10 font-bold flex items-center justify-center transition-colors">2</button>
-                <button className="w-10 h-10 rounded-xl bg-white border border-rose/30 text-ink hover:bg-rose/10 font-bold flex items-center justify-center transition-colors">&rarr;</button>
-              </div>
-            )}
           </div>
         </div>
       </main>

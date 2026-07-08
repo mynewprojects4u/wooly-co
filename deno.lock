@@ -20,6 +20,7 @@
         "npm:eslint@8",
         "npm:framer-motion@^12.42.2",
         "npm:next@14.2.35",
+        "npm:pg@^8.22.0",
         "npm:postcss@8",
         "npm:react-dom@18",
         "npm:react@18",

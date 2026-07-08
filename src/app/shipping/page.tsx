@@ -13,7 +13,7 @@ export default function ShippingPage() {
           <p className="mb-4 text-ink/80">Thank you for shopping at Wooly & Co. Here are the details regarding our shipping policies and processing times.</p>
           
           <h2 className="text-2xl font-bold mt-8 mb-4">1. Processing Times</h2>
-          <p className="mb-4 text-ink/80">Because all our items are handmade, processing times vary based on the product. <strong>Ready-to-ship</strong> items are typically dispatched within 2-3 business days. <strong>Made-to-order</strong> and custom items may take 1-3 weeks to create before they are shipped.</p>
+          <p className="mb-4 text-ink/80">Because all our items are handmade, processing times vary based on the product. <strong>Ready-to-ship items dispatch in 2-3 days, and made-to-order items in 1-3 weeks.</strong></p>
           
           <h2 className="text-2xl font-bold mt-8 mb-4">2. Shipping Rates</h2>
           <p className="mb-4 text-ink/80">We offer <strong>Free Shipping</strong> pan-India on all orders over ₹999. For orders under ₹999, a standard shipping fee of ₹60 applies.</p>
